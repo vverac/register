@@ -33,4 +33,6 @@ public class PacienteController {
         return new ResponseEntity<>(pacienteService.getPaciente(), HttpStatus.OK);
     }
     //localhost:8080/paciente/getPacientes para mostrar pacientes con fetch
+
+
 }

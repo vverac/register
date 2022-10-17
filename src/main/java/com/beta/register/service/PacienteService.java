@@ -9,4 +9,5 @@ public interface PacienteService {
     boolean savePaciente(PacienteEntity pacienteEntity);
 
     List<PacienteEntity> getPaciente();
+
 }
