@@ -12,12 +12,14 @@ import java.util.List;
 @RequestMapping("/paciente")
 public class PacienteController {
 
+
     @Autowired
     PacienteService pacienteService;
+
+
     @CrossOrigin
     @PostMapping("/save")
-    public ResponseEntity<String> savePaciente(@RequestBody PacienteEntity pacienteEntity){
-
+    public ResponseEntity<String> savePaciente( @RequestBody PacienteEntity pacienteEntity){
         if(pacienteService.savePaciente(pacienteEntity)){
             return new ResponseEntity<>("Paciente Save", HttpStatus.OK);
         }else{
@@ -35,4 +37,12 @@ public class PacienteController {
     //localhost:8080/paciente/getPacientes para mostrar pacientes con fetch
 
 
+
+    @CrossOrigin
+  //eliminamos por el id
+    @DeleteMapping ("/getPacientes/{id}")
+    //el valor {id } lo recibimos aqui abajo
+    public void eliminar(@PathVariable Integer id) {
+       pacienteService.eliminar(id);
+    }
 }

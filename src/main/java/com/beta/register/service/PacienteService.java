@@ -10,4 +10,5 @@ public interface PacienteService {
 
     List<PacienteEntity> getPaciente();
 
+    void eliminar(Integer id);
 }
